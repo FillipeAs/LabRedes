@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<scenario name="/home/fillipe/Documents/LabRedesTrab3.xml">
+  <networks>
+    <network id="3" name="n3" type="SWITCH">
+      <position x="439" y="196" lat="47.57738509640577" lon="-122.12640659385406" alt="2.0"/>
+    </network>
+    <network id="4" name="n4" type="SWITCH">
+      <position x="1075" y="522" lat="47.574421682686044" lon="-122.11783666604357" alt="2.0"/>
+    </network>
+  </networks>
+  <devices>
+    <device id="1" name="n1" type="router" class="" image="">
+      <position x="614" y="371" lat="47.5757943276827" lon="-122.12404851623324" alt="2.0"/>
+      <services>
+        <service name="zebra"/>
+        <service name="OSPFv2"/>
+        <service name="OSPFv3"/>
+        <service name="IPForward"/>
+      </services>
+    </device>
+    <device id="2" name="n2" type="router" class="" image="">
+      <position x="924" y="371" lat="47.5757943276827" lon="-122.11987135016211" alt="2.0"/>
+      <services>
+        <service name="zebra"/>
+        <service name="OSPFv2"/>
+        <service name="OSPFv3"/>
+        <service name="IPForward"/>
+      </services>
+    </device>
+    <device id="5" name="n5" type="host" class="" image="">
+      <position x="303" y="59" lat="47.57863040733663" lon="-122.12823915703368" alt="2.0"/>
+      <services>
+        <service name="DefaultRoute"/>
+        <service name="SSH"/>
+      </services>
+    </device>
+    <device id="6" name="n6" type="host" class="" image="">
+      <position x="143" y="197" lat="47.57737600643608" lon="-122.13039511371557" alt="2.0"/>
+      <services>
+        <service name="DefaultRoute"/>
+        <service name="SSH"/>
+      </services>
+    </device>
+    <device id="7" name="n7" type="host" class="" image="">
+      <position x="433" y="552" lat="47.574148967475054" lon="-122.12648744222966" alt="2.0"/>
+      <services>
+        <service name="DefaultRoute"/>
+        <service name="SSH"/>
+      </services>
+    </device>
+    <device id="8" name="n8" type="host" class="" image="">
+      <position x="1110" y="185" lat="47.57748508596828" lon="-122.11736505051942" alt="2.0"/>
+      <services>
+        <service name="DefaultRoute"/>
+        <service name="SSH"/>
+      </services>
+    </device>
+    <device id="9" name="n9" type="host" class="" image="">
+      <position x="1374" y="523" lat="47.574412592201895" lon="-122.11380772199429" alt="2.0"/>
+      <services>
+        <service name="DefaultRoute"/>
+        <service name="SSH"/>
+      </services>
+    </device>
+    <device id="10" name="n10" type="host" class="" image="">
+      <position x="1249" y="695" lat="47.57284900544909" lon="-122.11549206315202" alt="2.0"/>
+      <services>
+        <service name="DefaultRoute"/>
+        <service name="SSH"/>
+      </services>
+    </device>
+  </devices>
+  <links>
+    <link node1="3" node2="5">
+      <iface2 id="0" name="eth0" mac="00:00:00:aa:00:3c" ip4="10.0.0.10" ip4_mask="24" ip6="2001::10" ip6_mask="64"/>
+      <options delay="160" bandwidth="10000000" loss="2.0" dup="0" jitter="0" unidirectional="0"/>
+    </link>
+    <link node1="3" node2="6">
+      <iface2 id="0" name="eth0" mac="00:00:00:aa:00:3d" ip4="10.0.0.11" ip4_mask="24" ip6="2001::11" ip6_mask="64"/>
+      <options delay="150" bandwidth="100000000" loss="9.0" dup="0" jitter="0" unidirectional="0"/>
+    </link>
+    <link node1="3" node2="1">
+      <iface2 id="0" name="eth0" mac="00:00:00:aa:00:3e" ip4="10.0.0.1" ip4_mask="24" ip6="2001::1" ip6_mask="64"/>
+      <options delay="90" bandwidth="1000000000" loss="2.0" dup="0" jitter="0" unidirectional="0"/>
+    </link>
+    <link node1="4" node2="2">
+      <iface2 id="2" name="eth2" mac="00:00:00:aa:00:45" ip4="10.0.4.1" ip4_mask="24" ip6="2001:4::1" ip6_mask="64"/>
+      <options delay="110" bandwidth="100000000" loss="4.0" dup="0" jitter="0" unidirectional="0"/>
+    </link>
+    <link node1="4" node2="9">
+      <iface2 id="0" name="eth0" mac="00:00:00:aa:00:46" ip4="10.0.4.10" ip4_mask="24" ip6="2001:4::10" ip6_mask="64"/>
+      <options delay="75000" bandwidth="256000" loss="5.0" dup="0" jitter="5" unidirectional="0"/>
+    </link>
+    <link node1="4" node2="10">
+      <iface2 id="0" name="eth0" mac="00:00:00:aa:00:47" ip4="10.0.4.11" ip4_mask="24" ip6="2001:4::11" ip6_mask="64"/>
+      <options delay="160" bandwidth="10000000" loss="1.0" dup="0" jitter="0" unidirectional="0"/>
+    </link>
+    <link node1="1" node2="7">
+      <iface1 id="1" name="eth1" mac="00:00:00:aa:00:3f" ip4="10.0.1.1" ip4_mask="24" ip6="2001:1::1" ip6_mask="64"/>
+      <iface2 id="0" name="eth0" mac="00:00:00:aa:00:40" ip4="10.0.1.10" ip4_mask="24" ip6="2001:1::10" ip6_mask="64"/>
+      <options delay="60000" bandwidth="256000" loss="7.0" dup="0" jitter="0" unidirectional="0"/>
+    </link>
+    <link node1="1" node2="2">
+      <iface1 id="2" name="eth2" mac="00:00:00:aa:00:41" ip4="10.0.2.1" ip4_mask="24" ip6="2001:2::1" ip6_mask="64"/>
+      <iface2 id="0" name="eth0" mac="00:00:00:aa:00:42" ip4="10.0.2.2" ip4_mask="24" ip6="2001:2::2" ip6_mask="64"/>
+      <options delay="100" bandwidth="1000000000" loss="5.0" dup="0" jitter="0" unidirectional="0"/>
+    </link>
+    <link node1="2" node2="8">
+      <iface1 id="1" name="eth1" mac="00:00:00:aa:00:43" ip4="10.0.3.1" ip4_mask="24" ip6="2001:3::1" ip6_mask="64"/>
+      <iface2 id="0" name="eth0" mac="00:00:00:aa:00:44" ip4="10.0.3.10" ip4_mask="24" ip6="2001:3::10" ip6_mask="64"/>
+      <options delay="75000" bandwidth="256000" loss="8.0" dup="0" jitter="0" unidirectional="0"/>
+    </link>
+  </links>
+  <emane_global_configuration>
+    <emulator/>
+    <core>
+      <configuration name="platform_id_start" value="1"/>
+      <configuration name="nem_id_start" value="1"/>
+      <configuration name="link_enabled" value="1"/>
+      <configuration name="loss_threshold" value="30"/>
+      <configuration name="link_interval" value="1"/>
+      <configuration name="link_timeout" value="4"/>
+    </core>
+  </emane_global_configuration>
+  <session_origin lat="47.5791667" lon="-122.132322" alt="2.0" scale="150.0"/>
+  <session_options>
+    <configuration name="controlnet" value=""/>
+    <configuration name="controlnet0" value=""/>
+    <configuration name="controlnet1" value=""/>
+    <configuration name="controlnet2" value=""/>
+    <configuration name="controlnet3" value=""/>
+    <configuration name="controlnet_updown_script" value=""/>
+    <configuration name="enablerj45" value="1"/>
+    <configuration name="preservedir" value="0"/>
+    <configuration name="enablesdt" value="0"/>
+    <configuration name="sdturl" value="tcp://127.0.0.1:50000/"/>
+    <configuration name="ovs" value="0"/>
+  </session_options>
+  <session_metadata>
+    <configuration name="canvas c1" value="{name {Canvas1}} {refpt {0 0 47.5791667 -122.132322 2.0}} {scale 150.0} {size {1600 800}}"/>
+    <configuration name="global_options" value="interface_names=yes ip_addresses=yes ipv6_addresses=no node_labels=yes link_labels=yes show_api=no background_images=no annotations=yes grid=yes traffic_start=0"/>
+    <configuration name="annotation a1" value="{type text} {iconcoords {427.0 123.0}} {label {}} {canvas c1}"/>
+    <configuration name="annotation a2" value="{iconcoords {417.0 118.0}} {type text} {label {10Mbps 160us 2%loss}} {labelcolor black} {fontfamily {Arial}} {fontsize 12} {canvas c1}"/>
+    <configuration name="annotation a3" value="{iconcoords {205.0 241.0}} {type text} {label {100Mbps 150us 9%loss}} {labelcolor black} {fontfamily {Arial}} {fontsize 12} {canvas c1}"/>
+    <configuration name="annotation a4" value="{iconcoords {514.0 250.0}} {type text} {label {1Gbps 90us 2%loss}} {labelcolor black} {fontfamily {Arial}} {fontsize 12} {canvas c1}"/>
+    <configuration name="annotation a5" value="{iconcoords {538.0 506.0}} {type text} {label {256Mbps 60ms 7%loss}} {labelcolor black} {fontfamily {Arial}} {fontsize 12} {canvas c1}"/>
+    <configuration name="annotation a6" value="{iconcoords {700.0 331.0}} {type text} {label {1Gbps 100us 5%loss}} {labelcolor black} {fontfamily {Arial}} {fontsize 12} {canvas c1}"/>
+    <configuration name="annotation a7" value="{iconcoords {1068.0 271.0}} {type text} {label {256Kbps75ms 8%loss}} {labelcolor black} {fontfamily {Arial}} {fontsize 12} {canvas c1}"/>
+    <configuration name="annotation a8" value="{iconcoords {1036.0 431.0}} {type text} {label {100Mbps 110us 4%loss}} {labelcolor black} {fontfamily {Arial}} {fontsize 12} {canvas c1}"/>
+    <configuration name="annotation a9" value="{iconcoords {1156.0 491.0}} {type text} {label {256Kbps 75ms 5%loss}} {labelcolor black} {fontfamily {Arial}} {fontsize 12} {canvas c1}"/>
+    <configuration name="annotation a10" value="{iconcoords {1206.0 618.0}} {type text} {label {10Mbps 160us 1%loss}} {labelcolor black} {fontfamily {Arial}} {fontsize 12} {canvas c1}"/>
+  </session_metadata>
+  <default_services>
+    <node type="mdr">
+      <service name="zebra"/>
+      <service name="OSPFv3MDR"/>
+      <service name="IPForward"/>
+    </node>
+    <node type="PC">
+      <service name="DefaultRoute"/>
+    </node>
+    <node type="prouter"/>
+    <node type="router">
+      <service name="zebra"/>
+      <service name="OSPFv2"/>
+      <service name="OSPFv3"/>
+      <service name="IPForward"/>
+    </node>
+    <node type="host">
+      <service name="DefaultRoute"/>
+      <service name="SSH"/>
+    </node>
+  </default_services>
+</scenario>
